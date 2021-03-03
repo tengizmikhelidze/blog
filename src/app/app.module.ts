@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { IsLogedInGuard } from './guard/loginGuard/is-loged-in.guard';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
+    AngularFireAuthModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

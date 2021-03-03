@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IsLogedInGuard implements CanActivate {
-  constructor(private router: Router){}
+  constructor(private router: Router, private firebaseService: FirebaseService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      this.router.navigate(['login']);
-      return false;
+      if(this.firebaseService.isLoggedIn){
+        return true;
+      } else{
+        this.router.navigate(['login']);
+      }
   }
 
 }
