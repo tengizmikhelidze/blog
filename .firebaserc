@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "blog-f84f5": {
+      "hosting": {
+        "blog": [
+          "blog-f84f5"
+        ]
+      }
+    }
+  }
+}
