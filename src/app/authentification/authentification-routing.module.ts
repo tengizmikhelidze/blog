@@ -21,6 +21,10 @@ const routes: Routes = [
         component: RegisterComponent
       },
       {
+        path: 'logout',
+        redirectTo: 'login',
+      },
+      {
         path: '**',
         component: PageNotFoundComponent
       }

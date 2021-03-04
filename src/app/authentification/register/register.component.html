@@ -10,6 +10,16 @@
                       [ngClass]="(this.registerForm.get('name').touched && this.registerForm.get('name').status==='VALID') ? 'valid-input':''"/>
                   </div>
                   <div class="form-group">
+                    <label for="surname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <input type="text" name="surname" id="surname" placeholder="Your surname" formControlName="surname"
+                    [ngClass]="(this.registerForm.get('surname').touched && this.registerForm.get('surname').status==='VALID') ? 'valid-input':''"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="age"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <input type="number" name="age" id="age" placeholder="Your age" formControlName="age"
+                    [ngClass]="(this.registerForm.get('age').touched && this.registerForm.get('age').status==='VALID') ? 'valid-input':''"/>
+                  </div>
+                  <div class="form-group">
                       <label for="email"><i class="zmdi zmdi-email"></i></label>
                       <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email"
                       [ngClass]="(this.registerForm.get('email').touched && this.registerForm.get('email').status==='VALID') ? 'valid-input':''"/>
@@ -24,12 +34,12 @@
                       <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" formControlName="re_password"
                       [ngClass]="(this.registerForm.get('re_password').touched && this.registerForm.get('re_password').status==='VALID') ? 'valid-input':''"/>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" id="checkbox-form-group">
                       <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" formControlName='remember'/>
-                      <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                      <label for="agree-term" class="label-agree-term">I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                   </div>
                   <div class="form-group form-button">
-                      <input [disabled]="this.registerForm.invalid" (click)="register(this.registerForm.get('email').value,this.registerForm.get('password').value,this.registerForm.get('re_password').value)" type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                      <input [disabled]="this.registerForm.invalid" (click)="register(this.registerForm.get('email').value, this.registerForm.get('password').value, this.registerForm.get('re_password').value, this.registerForm.get('name').value, this.registerForm.get('surname').value, this.registerForm.get('age').value)" type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                   </div>
               </form>
           </div>

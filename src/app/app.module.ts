@@ -12,15 +12,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { IsLogedInGuard } from './guard/loginGuard/is-loged-in.guard';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 const routes: Routes = [
   {
     path: '',
     canActivate: [IsLogedInGuard],
+    component: AppComponent,
     children: [
       {
-        path: '',
-        component: PageNotFoundComponent
+        path: 'blog',
+        loadChildren: () =>
+          import('./features/blog/blog.module').then(
+            (m) => m.BlogModule
+          ),
       }
     ]
   },
@@ -49,6 +54,8 @@ const routes: Routes = [
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireStorageModule,
+    RouterModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
