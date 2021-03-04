@@ -22,7 +22,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   login(email: string, password: string, remember: boolean){
     this.firebaseService.signin(email,password,remember)
+  }
+
+  googleAuth(){
+    this.firebaseService.googleSignin();
+  }
+
+  facebookAuth(){
+    this.firebaseService.facebookSignin()
   }
 }

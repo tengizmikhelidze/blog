@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
+import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { User } from '../interfaces/user.interface';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +12,10 @@ export class FirebaseService {
   isLoggedIn = false;
   storageUser: any;
   email : string;
-  user: any;
   constructor(
     private firebaseAuth : AngularFireAuth,
     private router : Router,
-    private db : AngularFirestore
+    private db : AngularFirestore,
     ) {
       if(localStorage.getItem('user')){
         this.storageUser = JSON.parse(localStorage.getItem('user'));
@@ -44,7 +42,7 @@ export class FirebaseService {
     .then((res)=>{
       this.isLoggedIn = true;
       localStorage.setItem('user',JSON.stringify(res.user));
-      this.storeUSer(name, surname,age,email);
+      this.storeUSer(name,email, surname,age);
       this.email = email;
       this.router.navigate(['blog']);
     })
@@ -58,7 +56,7 @@ export class FirebaseService {
     localStorage.removeItem('user');
     this.router.navigate(['logout']);
   }
-  async storeUSer(name, surname,age,email){
+  async storeUSer(name: string, email: string, surname?: string,age?: number){
     this.db.collection("users").doc(email).set({
       name: name,
       surname: surname,
@@ -67,6 +65,49 @@ export class FirebaseService {
     })
     .catch((error) => {
         alert(`Error writing document: ${error.message}`);
+    });
+  }
+  async googleSignin(){
+    const provider =new firebase.auth.GoogleAuthProvider();
+    await this.firebaseAuth.signInWithPopup(provider)
+    .then((res)=>{
+      this.isLoggedIn = true;
+      this.router.navigate(['blog']);
+    })
+    .catch((error)=>{
+      alert(error.message);
+    });
+  }
+  async googleSignUp(){
+    const provider =new firebase.auth.GoogleAuthProvider();
+    await this.firebaseAuth.signInWithPopup(provider)
+    .then((res)=>{
+      this.router.navigate(['login']);
+    })
+    .catch((error)=>{
+      alert(error.message);
+    });
+  }
+  async facebookSignin(){
+    const provider =new firebase.auth.FacebookAuthProvider();
+    await this.firebaseAuth.signInWithPopup(provider)
+    .then((res)=>{
+      this.isLoggedIn = true;
+      this.router.navigate(['blog']);
+    })
+    .catch((error)=>{
+      alert(error.message);
+    });
+  }
+  async facebookSignup(){
+    const provider =new firebase.auth.FacebookAuthProvider();
+    await this.firebaseAuth.signInWithPopup(provider)
+    .then((res)=>{
+      this.isLoggedIn = true;
+      this.router.navigate(['login']);
+    })
+    .catch((error)=>{
+      alert(error.message);
     });
   }
 }
