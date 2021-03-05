@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signOut(){
+  signOut(): void{
     this.firebaseService.logout();
   }
 }

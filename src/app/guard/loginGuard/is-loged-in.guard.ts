@@ -11,7 +11,7 @@ export class IsLogedInGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.firebaseService.isLoggedIn){
+      if (this.firebaseService.isLoggedIn){
         return true;
       } else{
         this.router.navigate(['login']);
