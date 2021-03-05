@@ -34,11 +34,4 @@ export class RegisterComponent implements OnInit {
       this.registerForm.patchValue({password: '',re_password: ''});
     }
   }
-
-  googleAuth(){
-    this.firebaseService.googleSignUp();
-  }
-  facebookAuth(){
-    this.firebaseService.facebookSignup()
-  }
 }

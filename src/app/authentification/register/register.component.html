@@ -40,10 +40,6 @@
                   </div>
                   <div class="form-group form-button" id="register-button">
                       <input [disabled]="this.registerForm.invalid" (click)="register(this.registerForm.get('email').value, this.registerForm.get('password').value, this.registerForm.get('re_password').value, this.registerForm.get('name').value, this.registerForm.get('surname').value, this.registerForm.get('age').value)" type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
-                      <ul class="socials" id="socials">
-                        <li><i (click)="facebookAuth()" class="lab la-facebook-f display-flex-center zmdi zmdi-facebook"></i></li>
-                        <li><i (click)="googleAuth()" class="lab la-google display-flex-center zmdi zmdi-google"></i></li>
-                      </ul>
                   </div>
               </form>
           </div>
