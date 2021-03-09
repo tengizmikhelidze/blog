@@ -1,0 +1,84 @@
+@import '../../../../styles/index.scss';
+.header-wrapper{
+  width: 100%;
+  height: 98vh;
+  .header-content{
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    .header-navigation{
+      width: 90%;
+      margin: auto;
+      height: 100px;
+      @include flex(space-between, center);
+      .header-logo{
+        @include flex(center, center);
+        > * {
+          margin-right: 30px;
+        }
+      }
+      .header-nav-links{
+        ul{
+          li{
+            cursor: pointer;
+            display: inline;
+            margin: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: $text-primary;
+            text-transform: capitalize;
+            outline: none;
+          }
+          .active{
+            color: #263843;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .header-information{
+      position: relative;
+      height: calc(100% - 100px);
+      width: 100%;
+      img{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+      }
+      .header-information-content{
+        height: 90%;
+        width: 90%;
+        margin: auto;
+        @include flex(flex-end,flex-start,column);
+        h1{
+          width: 60%;
+          color: #fff;
+          font-size: 42px;
+          font-weight: 500;
+        }
+        button{
+          cursor: pointer;
+          margin-top: 20px;
+          padding: 20px 33px;
+          border-radius: 50px;
+          outline: none;
+          border-color: #c3ccd3;
+          background: transparent;
+          color: #fff;
+          font-weight: 500;
+          font-size: 19px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.logo-line{
+  width: 44px;
+  height: 1px;
+  background-color: #707070;
+}
+
+

@@ -1,0 +1,27 @@
+<div class="header-wrapper">
+  <div class="header-content">
+    <div class="header-navigation">
+      <div class="header-logo">
+        <div class="logo-line"></div>
+        <img src="assets/logo/Path 6.png" alt="Logo">
+        <div class="logo-line"></div>
+      </div>
+      <div class="header-nav-links">
+        <ul>
+          <li [routerLink]="['/blog']" class="active" (click)="routerClick($event)">Blog</li>
+          <li [routerLink]="['/blog']" (click)="routerClick($event)">About</li>
+          <li [routerLink]="['/blog']" (click)="routerClick($event)">Products</li>
+          <li [routerLink]="['/blog']" (click)="routerClick($event)">The academy</li>
+          <li [routerLink]="['/blog']" (click)="routerClick($event)">Contact us</li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-information">
+      <img src="assets/header/Mask Group 1.png" alt="Night Camping">
+      <div class="header-information-content">
+        <h1>The travellers always travel the most beautiful places of the world</h1>
+        <button (click)="keepReading()">keep reading</button>
+      </div>
+    </div>
+  </div>
+</div>

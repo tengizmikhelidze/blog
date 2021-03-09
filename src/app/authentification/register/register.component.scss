@@ -34,3 +34,93 @@
   }
 }
 
+//Common
+@import '../common/extend.scss';
+@import '../common/fonts.scss';
+@import '../common/minxi.scss';
+@import '../common/variables.scss';
+@import '../common/global.scss';
+
+//layout
+@import '../layouts/main.scss';
+
+// Responsive
+@import '../layouts/responsive.scss';
+
+
+#agree-term{
+  display: inline-block;
+}
+
+#socials{
+  i{
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 2px;
+    color: #fff;
+    &:hover{
+      @include box-shadow(0px 2px 10px 0.17px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+
+}
+
+@media screen and (max-width: 1300px) {
+
+}
+
+//end 1200px
+@media screen and (max-width: 1200px) {
+  .signup{
+    width: 100%;
+    height: 100vh;
+    .container{
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+//end 1200px
+@media screen and (max-width: 1024px) {
+}
+
+//end 1024px
+@media screen and (max-width: 992px) {
+
+}
+
+//end 992px
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 620px)  {
+
+}
+
+//end 767px
+@media screen and (max-width: 575px) {
+
+}
+
+//end 575px
+@media screen and (max-width: 480px) {
+
+}
+
+//end 480px
+@media screen and (max-width: 400px) {
+
+}
+
+//end 400px
+
+@media screen and (max-width: 320px) {}
+
