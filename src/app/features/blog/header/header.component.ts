@@ -12,12 +12,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  routerClick(event){
-    var deactive = document.getElementsByClassName('active')[0];
-    deactive.className = 'inactive';
-    event.target.className = 'active';
-  }
-
   keepReading(){
 
   }

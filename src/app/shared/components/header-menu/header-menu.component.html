@@ -1,0 +1,40 @@
+<div class="header-navigation">
+  <div class="header-logo">
+    <div class="logo-line"></div>
+    <img src="assets/logo/Path 6.png" alt="Logo">
+    <div class="logo-line"></div>
+  </div>
+  <div class="header-nav-links">
+    <ul>
+      <li [routerLink]="['/blog']" class="active" (click)="routerClick($event)">Blog</li>
+      <li [routerLink]="['/blog']" (click)="routerClick($event)">About</li>
+      <li [routerLink]="['/blog']" (click)="routerClick($event)">Products</li>
+      <li [routerLink]="['/blog']" (click)="routerClick($event)">The academy</li>
+      <li [routerLink]="['/blog']" (click)="routerClick($event)">Contact us</li>
+    </ul>
+  </div>
+  <div class="profile">
+    <div class="profile-content" (click)="toggleMenu()">
+      <div class="profile-img"></div>
+      <div class="profile-name">
+        <p>{{this.userName}} {{this.userSurname}}</p>
+      </div>
+    </div>
+    <div *ngIf="this.showMenu" class="profile-menu">
+      <ul>
+        <li>
+          <i class="lar la-user"></i>
+          <p>profile</p>
+        </li>
+        <li>
+          <i class="las la-user-cog"></i>
+          <p>settings</p>
+        </li>
+        <li (click)="logout()">
+          <i class="las la-sign-out-alt"></i>
+          <p>log out</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

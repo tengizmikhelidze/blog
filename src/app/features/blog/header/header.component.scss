@@ -6,36 +6,6 @@
     width: 98%;
     height: 100%;
     margin: auto;
-    .header-navigation{
-      width: 90%;
-      margin: auto;
-      height: 100px;
-      @include flex(space-between, center);
-      .header-logo{
-        @include flex(center, center);
-        > * {
-          margin-right: 30px;
-        }
-      }
-      .header-nav-links{
-        ul{
-          li{
-            cursor: pointer;
-            display: inline;
-            margin: 15px;
-            font-size: 20px;
-            text-decoration: none;
-            color: $text-primary;
-            text-transform: capitalize;
-            outline: none;
-          }
-          .active{
-            color: #263843;
-            font-weight: bold;
-          }
-        }
-      }
-    }
     .header-information{
       position: relative;
       height: calc(100% - 100px);

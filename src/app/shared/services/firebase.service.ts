@@ -3,6 +3,8 @@ import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -65,5 +67,12 @@ export class FirebaseService {
     .catch((error) => {
         alert(`Error writing document: ${error.message}`);
     });
+  }
+  searchUser(uid: string){
+    return this.db.collection<User>('users').doc(uid).get().pipe(
+      map((user)=>{
+        return user.data()
+      })
+    );
   }
 }
