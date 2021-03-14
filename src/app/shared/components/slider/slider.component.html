@@ -1,0 +1,18 @@
+<div class="slider">
+    <div *ngFor="let obj of sliderContent; let i = index">
+      <div class="slide" *ngIf="i === index">
+        <div class="slide__header">
+          {{obj.title}}
+        </div>
+        <img class="slide__img" [src]="obj.src" alt="sorry">
+      </div>
+    </div>
+  <div class="slider-control" *ngIf="sliderContent.length > 1">
+    <button class="slider-control__btn" (click)="prevSlide()" [disabled]="prevDisabled">
+      <ng-content select="[next]"></ng-content>
+    </button>
+    <button class="slider-control__btn" (click)="nextSlide()" [disabled]="nextDisabled">
+      <ng-content select="[prev]"></ng-content>
+    </button>
+  </div>
+</div>

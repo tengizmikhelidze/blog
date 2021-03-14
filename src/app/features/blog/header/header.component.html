@@ -1,12 +1,27 @@
 <div class="header-wrapper">
   <div class="header-content">
-    <app-header-menu></app-header-menu>
-    <div class="header-information">
-      <img src="assets/header/Mask Group 1.png" alt="Night Camping">
-      <div class="header-information-content">
-        <h1>The travellers always travel the most beautiful places of the world</h1>
-        <button (click)="keepReading()">keep reading</button>
-      </div>
-    </div>
+<!--    <app-header-menu></app-header-menu>-->
+    <app-shared-slider [sliderContent]="[
+    {
+      title: 'The travellers always travel the most beautiful places of the world',
+      src: 'assets/header/Mask Group 1.png'
+    },
+    {
+      title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+      src: 'https://images.wallpaperscraft.com/image/starry_sky_shine_night_blue_118888_3840x2400.jpg'
+    },
+    {
+      title: 'The travellers',
+      src: 'https://wow.zamimg.com/uploads/blog/images/20516-afterlives-ardenweald-4k-desktop-wallpapers.jpg'
+    },
+    {
+      title: 'It is a long established fact that a reader will be distracted by the readable content of a page',
+      src: 'https://www.pxwall.com/wp-content/uploads/2018/08/highway-animated-wallpaper-4k-3840x2160.jpg'
+    }
+    ]">
+      <i style="color: #fff;" class="las la-angle-left" next></i>
+      <i style="color: #fff;" class="las la-angle-right" prev></i>
+    </app-shared-slider>
   </div>
 </div>
+

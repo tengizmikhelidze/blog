@@ -70,8 +70,8 @@ export class FirebaseService {
   }
   searchUser(uid: string){
     return this.db.collection<User>('users').doc(uid).get().pipe(
-      map((user)=>{
-        return user.data()
+      map((user) => {
+        return user.data();
       })
     );
   }

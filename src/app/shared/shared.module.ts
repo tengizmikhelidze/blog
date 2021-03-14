@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
 import { RouterModule } from '@angular/router';
-import { components } from './components/intex';
 
+import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
+import {components, SliderComponent} from './components/intex';
 
 
 @NgModule({
-  declarations: [HeaderMenuComponent],
+  declarations: [HeaderMenuComponent, SliderComponent],
   imports: [
     CommonModule,
     RouterModule,
