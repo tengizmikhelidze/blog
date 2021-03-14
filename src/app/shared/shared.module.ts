@@ -7,7 +7,7 @@ import { components } from './components/intex';
 
 
 @NgModule({
-  declarations: [HeaderMenuComponent],
+  declarations: [...components],
   imports: [
     CommonModule,
     RouterModule,

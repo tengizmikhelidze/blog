@@ -1,0 +1,24 @@
+@media all and (max-width: 860px){
+  .menu{
+    display: none;
+  }
+  .header-wrapper{
+    .header-content{
+      width: 100%;
+      .header-information{
+        height: 98vh;
+        .header-information-content{
+          height: 100%;
+          text-align: center;
+          @include flex(center,center,column);
+        }
+      }
+    }
+  }
+}
+@media all and (min-width: 861px){
+  .menu-burger{
+    display: none;
+  }
+}
+

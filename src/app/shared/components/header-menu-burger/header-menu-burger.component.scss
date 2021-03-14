@@ -1,0 +1,67 @@
+@import '../../../../styles/index.scss';
+.burger-menu-wrapper{
+  position: absolute;
+  z-index: 20;
+  width: 50%;
+  height: 100vh;
+  padding: 15px;
+  .burger-icon{
+    @include flex(flex-start, center);
+    i{
+      font-size: 40px;
+    }
+  }
+}
+
+.profile{
+  position: relative;
+  .profile-content{
+    cursor: pointer;
+    @include flex(flex-start, center);
+    .profile-img{
+      width: 50px;
+      height: 50px;
+      outline: none;
+      border: 1px solid $text-primary;
+      border-radius: 50%;
+      margin-right: 5px;
+      background: url('../../../../assets/header/user/user.png');
+      background-position: center;
+      background-size: cover;
+    }
+    .profile-name{
+      p{
+        text-transform: capitalize;
+      }
+    }
+  }
+  .profile-menu{
+    background-color: $background;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 10;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+    ul{
+      width: 100%;
+      height: 100%;
+      @include flex(center, flex-start, column);
+      li{
+        cursor: pointer;
+        text-transform: capitalize;
+        font-size: 16px;
+        margin: 12px;
+        letter-spacing: 1px;
+        width: 100%;
+        @include flex(flex-start, center);
+        i{
+          margin-right: 10px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@media all and (max-width: 1140px) {
+  .header-navigation{
+    .header-logo{
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 860px){
+  .header-navigation{
+    .header-nav-links{
+      ul{
+        li{
+          font-size: 18px;
+        }
+      }
+    }
+    .profile{
+      .profile-content{
+        .profile-name{
+          p{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
