@@ -5,7 +5,7 @@
       <div class="profile-content">
         <div class="profile-img"></div>
         <div class="profile-name">
-          <p>{{this.userName}} {{this.userSurname}}</p>
+          <p>{{ this.userName }} {{ this.userSurname }}</p>
         </div>
       </div>
     </div>
@@ -13,7 +13,11 @@
   <div class="burger-menu-content">
     <div class="header-nav-links" [@burgerMenu]="contentState">
       <ul>
-        <li [routerLink]="['/blog']" class="active" (click)="routerClick($event)">
+        <li
+          [routerLink]="['/blog']"
+          class="active"
+          (click)="routerClick($event)"
+        >
           <i class="lab la-blogger-b"></i>
           Blog
         </li>

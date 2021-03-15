@@ -5,7 +5,7 @@ import { FirebaseService } from 'src/app/shared/services/firebase.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -15,13 +15,19 @@ export class LoginComponent implements OnInit {
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(26)]],
-      remember : ['']
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(26),
+        ],
+      ],
+      remember: [''],
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login(email: string, password: string, remember: boolean): void {
     this.firebaseService.signin(email, password, remember);

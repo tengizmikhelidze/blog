@@ -8,14 +8,13 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "prettier": "prettier --write src/**/*.{ts,js,css,html}"
+        "prettier": "prettier --write src/**/*.{ts,js,css,html}",
+        "cleanCode": "npm run prettier"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run prettier --staged && ng lint && npm test",
-            "pre-push": "ng build --aot true"
-        }
-    },
+    "pre-commit": [
+        "prettier",
+        "lint"
+    ],
     "private": true,
     "dependencies": {
         "@angular/animations": "~11.1.0",

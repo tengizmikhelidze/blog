@@ -4,16 +4,9 @@ import { HeaderMenuComponent } from './components/header-menu/header-menu.compon
 import { RouterModule } from '@angular/router';
 import { components } from './components/intex';
 
-
-
 @NgModule({
   declarations: [...components],
-  imports: [
-    CommonModule,
-    RouterModule,
-  ],
-  exports: [
-    ...components
-  ]
+  imports: [CommonModule, RouterModule],
+  exports: [...components],
 })
-export class SharedModule { }
+export class SharedModule {}

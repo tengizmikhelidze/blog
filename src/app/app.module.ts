@@ -23,11 +23,9 @@ const routes: Routes = [
       {
         path: 'blog',
         loadChildren: () =>
-          import('./features/blog/blog.module').then(
-            (m) => m.BlogModule
-          ),
-      }
-    ]
+          import('./features/blog/blog.module').then((m) => m.BlogModule),
+      },
+    ],
   },
   {
     path: '',
@@ -38,14 +36,11 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: PageNotFoundComponent
-  }
+    component: PageNotFoundComponent,
+  },
 ];
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-  ],
+  declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -56,9 +51,9 @@ const routes: Routes = [
     AngularFireAuthModule,
     AngularFireStorageModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

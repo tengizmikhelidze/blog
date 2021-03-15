@@ -1,4 +1,4 @@
-import { HeaderMenuBurgerComponent } from "./header-menu-burger/header-menu-burger.component";
-import { HeaderMenuComponent } from "./header-menu/header-menu.component";
+import { HeaderMenuBurgerComponent } from './header-menu-burger/header-menu-burger.component';
+import { HeaderMenuComponent } from './header-menu/header-menu.component';
 
-export const components =[HeaderMenuComponent, HeaderMenuBurgerComponent];
+export const components = [HeaderMenuComponent, HeaderMenuBurgerComponent];

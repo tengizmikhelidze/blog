@@ -6,13 +6,8 @@ import { BlogComponent } from './blog.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
   declarations: [BlogComponent, HeaderComponent],
-  imports: [
-    CommonModule,
-    BlogRoutingModule,
-    SharedModule
-  ]
+  imports: [CommonModule, BlogRoutingModule, SharedModule],
 })
-export class BlogModule { }
+export class BlogModule {}

@@ -6,20 +6,14 @@ import { FirebaseService } from 'src/app/shared/services/firebase.service';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
+  constructor(private firebaseService: FirebaseService) {}
 
+  ngOnInit(): void {}
 
-  constructor(
-    private firebaseService: FirebaseService
-  ) {
-  }
-
-  ngOnInit(): void {
-  }
-
-  signOut(): void{
+  signOut(): void {
     this.firebaseService.logout();
   }
 }
