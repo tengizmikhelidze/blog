@@ -11,10 +11,14 @@
       font-size: 40px;
     }
   }
+  .burger-menu-content{
+    width: 100%;
+  }
 }
 
 .profile{
   position: relative;
+  transform: translateX(25%);
   .profile-content{
     cursor: pointer;
     @include flex(flex-start, center);
@@ -62,6 +66,50 @@
           font-size: 22px;
         }
       }
+    }
+  }
+}
+
+.header-nav-links{
+  ul{
+    li{
+      cursor: pointer;
+      margin: 15px 0px;
+      font-size: 20px;
+      text-decoration: none;
+      color: $text-primary;
+      text-transform: capitalize;
+      outline: none;
+      i{
+        margin-right: 10px;
+        font-size: 26px;
+      }
+    }
+    .active{
+      color: #263843;
+    }
+  }
+}
+
+.profile-menu{
+  ul{
+    li{
+      cursor: pointer;
+      text-transform: capitalize;
+      font-size: 20px;
+      margin: 12px 0px;
+      letter-spacing: 1px;
+      width: 100%;
+
+      color: $text-primary;
+      @include flex(flex-start, center);
+      i{
+        margin-right: 10px;
+        font-size: 26px;
+      }
+    }
+    .active{
+      color: #263843;
     }
   }
 }

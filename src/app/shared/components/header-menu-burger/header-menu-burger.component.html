@@ -1,12 +1,55 @@
 <div class="burger-menu-wrapper" [@burgerMenu]="animationState">
   <div class="burger-icon">
     <i class="las la-bars" (click)="openMenu()" [@burgerMenu]="burgerState"></i>
+    <div class="profile" [@burgerMenu]="contentState">
+      <div class="profile-content">
+        <div class="profile-img"></div>
+        <div class="profile-name">
+          <p>{{this.userName}} {{this.userSurname}}</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="burger-menu-content">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus recusandae minima iure molestiae numquam provident repudiandae ut placeat et repellat quasi natus pariatur odio dolores, temporibus deleniti obcaecati officia eum.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus recusandae minima iure molestiae numquam provident repudiandae ut placeat et repellat quasi natus pariatur odio dolores, temporibus deleniti obcaecati officia eum.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus recusandae minima iure molestiae numquam provident repudiandae ut placeat et repellat quasi natus pariatur odio dolores, temporibus deleniti obcaecati officia eum.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus recusandae minima iure molestiae numquam provident repudiandae ut placeat et repellat quasi natus pariatur odio dolores, temporibus deleniti obcaecati officia eum.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus recusandae minima iure molestiae numquam provident repudiandae ut placeat et repellat quasi natus pariatur odio dolores, temporibus deleniti obcaecati officia eum.</p>
+    <div class="header-nav-links" [@burgerMenu]="contentState">
+      <ul>
+        <li [routerLink]="['/blog']" class="active" (click)="routerClick($event)">
+          <i class="lab la-blogger-b"></i>
+          Blog
+        </li>
+        <li [routerLink]="['/blog']" (click)="routerClick($event)">
+          <i class="lar la-address-card"></i>
+          About
+        </li>
+        <li [routerLink]="['/blog']" (click)="routerClick($event)">
+          <i class="lab la-product-hunt"></i>
+          Products
+        </li>
+        <li [routerLink]="['/blog']" (click)="routerClick($event)">
+          <i class="las la-graduation-cap"></i>
+          The academy
+        </li>
+        <li [routerLink]="['/blog']" (click)="routerClick($event)">
+          <i class="las la-mobile"></i>
+          Contact us
+        </li>
+      </ul>
+    </div>
+    <div class="profile-menu" [@burgerMenu]="contentState">
+      <ul>
+        <li (click)="routerClick($event)">
+          <i class="lar la-user"></i>
+          <p>profile</p>
+        </li>
+        <li (click)="routerClick($event)">
+          <i class="las la-user-cog"></i>
+          <p>settings</p>
+        </li>
+        <li (click)="logout()" (click)="routerClick($event)">
+          <i class="las la-sign-out-alt"></i>
+          <p>log out</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
