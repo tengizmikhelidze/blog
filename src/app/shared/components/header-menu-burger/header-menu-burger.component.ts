@@ -11,12 +11,10 @@ import { FirebaseService } from '../../services/firebase.service';
     trigger('burgerMenu',[
       state('open', style({
         width: '50%',
-        height: '100vh',
         backgroundColor: '#fff',
       })),
       state('closed', style({
         width: '0px',
-        height: '0px',
       })),
       state('closedBurger', style({
         color: '#fff'
@@ -30,6 +28,7 @@ import { FirebaseService } from '../../services/firebase.service';
       })),
       state('closedContent', style({
         opacity: '0',
+        display: 'none',
         width: '0%',
       })),
       transition('open <=> closed',[

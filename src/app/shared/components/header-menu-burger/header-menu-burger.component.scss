@@ -3,7 +3,9 @@
   position: absolute;
   z-index: 20;
   width: 50%;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
   padding: 15px;
   .burger-icon{
     @include flex(flex-start, center);
